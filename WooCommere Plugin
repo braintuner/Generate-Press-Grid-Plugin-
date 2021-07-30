@@ -1,0 +1,93 @@
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  jQuery( ".woocommerce-products-header" ).append( "<div class='grid-list'><i class='fas fa-th'></i><i class='fas fa-bars'></i></div>" );
+	jQuery(".fa-th").hide(); 
+	jQuery(".grid-list i").click(function(){
+    jQuery(".products").toggleClass( "column-active" );
+		jQuery(".products li").toggleClass( "list-product" );
+		jQuery(".products a").toggleClass( "a-active" );
+		jQuery(".inside-wc-product-image").toggleClass( "image-active" );
+		jQuery(".woocommerce-loop-category__title").toggleClass( "font-active" );
+		jQuery(".woocommerce-loop-product__title").toggleClass( "font-active" );
+		jQuery(".products .button").toggleClass( "button-active" );
+		if(jQuery(".products").hasClass("column-active")) {
+   jQuery(".fa-th").show(); 
+			jQuery(".fa-bars").hide(); 
+     } else {
+			  jQuery(".fa-bars").show(); 
+			 jQuery(".fa-th").hide(); 
+		 }
+});	
+});			
+</script>
+ 
+<style>
+/*For toggling button */
+
+.toggle-active{
+	 border: 1px solid black;
+    font-size: 16px;
+    padding: 3px;
+}
+.grid-list{
+	display: inline-block;
+}
+.grid-list i{
+	cursor:pointer;
+}
+ 
+/*If active Gl */
+
+/*For category page */
+/* #main .products{
+	display: flex;
+    flex-direction: column;
+} */
+
+#main .column-active{
+	display: flex;
+    flex-direction: column;
+}
+
+.products .list-product{
+	display: flex !important;
+    flex-direction: row !important;
+	align-items: center;
+	border-bottom: 1px solid #0000000f;
+}
+
+.products .a-active{
+	display: flex !important;
+    align-items: center;
+}
+
+.products .button-active{
+	margin-right:0 !important;	
+}
+
+.image-active{
+	width: 80px;
+    height: auto;
+}
+
+.font-active{
+	font-size: 20px;
+}
+
+.font-active:after{
+	content: "-";
+    display: inline-block;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.icon-active{
+ display:block!important;
+}
+.icon-inactive{
+ display:none!important;
+}
+/*For product page */
+
+</style>
